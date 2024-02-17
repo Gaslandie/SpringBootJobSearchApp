@@ -1,33 +1,32 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Dossiers
+/target/
+/.mvn/
+/logs/
+/bin/
+/build/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Fichiers
+*.log
+*.swp
+*.jar
+*.war
+*.ear
+*.class
 
-### IntelliJ IDEA ###
-.idea
-*.iws
+# Fichiers de configuration
+src/main/resources/application.properties
 *.iml
-*.ipr
+.idea/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# Fichiers spécifiques à l'environnement
+/.vscode/
 
-### VS Code ###
+# Fichiers de dépendances Maven
+/.m2/
+
+# Fichiers de sauvegarde
+*~
+
+# Fichiers de configuration d'éditeur
 .vscode/
+.settings/
