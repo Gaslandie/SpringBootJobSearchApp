@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gaslandie.jobSearch.entities.Post;
 import com.gaslandie.jobSearch.services.PostService;
+import com.gaslandie.jobSearch.services.SearchService;
 
 import springfox.documentation.annotations.ApiIgnore;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -24,6 +27,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class PostController {
     @Autowired
     PostService postService;
+
+    @Autowired
+    SearchService searchService;
 
     @ApiIgnore //to ignore predefined requests by swagger
     @RequestMapping(value="/")
@@ -43,4 +49,11 @@ public class PostController {
     public List<Post> getAllPosts(){
         return postService.getAllPosts();
     }
+
+    //searching some data base on the search text 
+    @GetMapping("posts/{text}")
+    public List<Post> search(@PathVariable String text) {
+        return searchService.findByText(text);
+    }
+    
 }
